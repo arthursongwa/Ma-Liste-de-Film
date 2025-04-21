@@ -8,7 +8,16 @@
   <link rel="icon" type="image/x-icon" href="icon.png">
 </head>
 <body>
-  <h1>🎬Ma Liste de Films🎬</h1>
+  <header>
+    <!-- <button id="openProfilBtn">
+      Profil 🤠
+    </button> -->
+    <h1>🎬Ma Liste de Films🎬</h1>
+  </header>
+  <div class="profile">
+    p
+  </div>
+  
   <!-- Conteneur de la notification -->
   <div id="notification">
     <p id="notificationMessage"></p>
@@ -16,10 +25,15 @@
 
   <!-- Fenêtre modale des paramètres -->
   <div id="settingsModal">
-    <h3>Paramètres</h3>
+    <div class="settingsModalHead">
+      <h3>Paramètres</h3>
+      <div>
+        <button id="saveSettingsBtn" title="Sauvegarder">💾</button>
+        <button id="closeSettingsBtn" class="cancel-btn" title="Fermer">❌</button>
+      </div>
+    </div><br>
     <label for="backupNameInput">Nom du fichier backup :</label><br>
     <input type="text" id="backupNameInput" style="margin-top: 5px; padding: 5px;" /><br><br>
-    <button id="saveSettingsBtn">💾 Sauvegarder</button>
   </div>
 
   <form id="filmForm">
@@ -111,6 +125,7 @@
     <button id="exportBtn">Exporter JSON 📤</button>
     <button id="importBtn">Importer JSON 📥</button>
     <input type="file" id="importInput" accept="application/json" style="display:none" />
+     
     <!-- Bouton pour ouvrir les paramètres -->
     <button id="openSettingsBtn">
       Paramètres ⚙️
@@ -157,7 +172,9 @@
       </tr>
     </tbody>
   </table>
-  
+  <footer style="text-align: center;">
+    <p>© 2025 - Créé par Arthur Songwa-Nkuiga. Tous droits réservés.</p>
+  </footer>
 
   <!-- <script src="script.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/dexie@3/dist/dexie.min.js"></script>

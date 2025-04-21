@@ -2,6 +2,7 @@ let backupFileName = "Movie_backup.json"; // Valeur par défaut
 
 // Boutons
 const openBtn = document.getElementById("openSettingsBtn");
+const closeBtn = document.getElementById("closeSettingsBtn");
 const settingsModal = document.getElementById("settingsModal");
 const saveBtn = document.getElementById("saveSettingsBtn");
 const input = document.getElementById("backupNameInput");
@@ -384,8 +385,14 @@ function showNotification(message, type = 'success') {
 // Ouvrir/fermer la modale
 openBtn.addEventListener("click", () => {
     input.value = backupFileName;
-    settingsModal.style.display = settingsModal.style.display === "none" ? "block" : "none";
+    settingsModal.style.display = "flex";
+    document.body.style.overflow = "hidden"
     
+});
+// fermer la modale
+closeBtn.addEventListener("click", () => {
+  settingsModal.style.display = "none";
+  document.body.style.overflow = "scroll"
 });
 
 // Fermer le modal si on clique en dehors

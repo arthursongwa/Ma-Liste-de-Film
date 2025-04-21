@@ -20,6 +20,28 @@ h1 {
         margin-bottom: 20px;
         color: var(--accent);
 }
+/* ===== Header ===== */
+header{
+        display: flex;
+        justify-content: center;
+}
+header button{
+        height: fit-content;
+}
+/* ===== Profil page ===== */
+.profile{
+        display: none;
+        height: calc(100% - 60px);
+        width: calc(100% - 60px);
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        border-radius: 10px;
+        background-color: var(--card);
+        border: 1px solid var(--muted);
+        box-shadow: 0 0 50px #000;
+}
+
 /* ===== Formulaire ===== */
 form {
         display: grid;
@@ -192,22 +214,33 @@ padding: 0;
         background-color: var(--accent);
         color: #000;
         border: none;
-        padding: 8px 12px;
-        border-radius: 5px;
+        padding: 6px 8px;
+        border-radius: 4px;
+        font-size: 0.85rem;
         cursor: pointer;
+        margin: 0 2px;
 }
 #settingsModal{
-        display: none; 
+        /* display: none;  */
+        flex-direction: column;
         position: fixed; 
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 30px;
+        left: 30px;
+        width: calc(100% - 60px);
+        height: calc(100% - 60px);
         border: 1px solid var(--muted); 
         background: var(--card); 
         padding: 20px; 
         border-radius: 8px; 
         box-shadow: 0 0 50px #000; 
-        z-index: 1000;
+        z-index: 999;        
+}
+#settingsModal input{
+        width: fit-content;
+}
+.settingsModalHead{
+        display: flex;
+        justify-content: space-between;
 }
 /* ===== Gestion des statuts ===== */
 .status{
