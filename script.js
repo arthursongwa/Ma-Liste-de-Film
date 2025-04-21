@@ -155,6 +155,7 @@ async function updateFilters() {
             <option>action</option>
             <option>aventures</option>
             <option>catastrophe</option>
+            <option>animation</option>
             <option>drame</option>
             <option>cinéma </option>
             <option>fantasy</option>
@@ -178,6 +179,7 @@ async function updateFilters() {
             <option>HBO Max</option>
             <option>Arte.tv</option>
             <option>Crunchyroll</option>
+            <option>TOHO Animation</option>
             <option>Plex / Pluto TV</option>
             <option>Autres</option>
           `;
