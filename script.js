@@ -243,8 +243,23 @@ async function updateFilters() {
     };
   
     await db.films.put(updated); // ← version avec Dexie
-    await renderFilms();
-    showNotification("Modification sauvegarder ✅");
+    
+    const filters = {
+      type: filterType.value,
+      platform: filterPlatform.value,
+      priority: filterPriority.value,
+      status: filterStatus.value,
+      date: filterDate.value,
+      titre: filterTitre.value.trim().toLowerCase()
+    };
+    if(filters.type != "" || filters.platform != "" || filters.priority != "" || filters.status != "" || filters.date != "" || filters.titre != ""){
+      await renderFilmsWithFilters();
+      showNotification("Modification sauvegarder ✅");
+    }else{
+      await renderFilms();
+      showNotification("Modification sauvegarder ✅");
+    }
+    
   }
   
 
