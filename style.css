@@ -1,4 +1,6 @@
-/* ===== Variables de couleurs ===== */
+/* ========================================================
+   VARIABLES DE COULEURS
+======================================================== */
 :root {
         --bg: #292b2e;
         --card: #373a3c;
@@ -8,7 +10,15 @@
         --accent-hover: #66bb6a;
         --error: #e57373;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ========================================================
+   BASE
+======================================================== */
+* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+}
 body {
         background: var(--bg);
         color: var(--text);
@@ -20,16 +30,22 @@ h1 {
         margin-bottom: 20px;
         color: var(--accent);
 }
-/* ===== Header ===== */
-header{
+
+/* ========================================================
+   HEADER
+======================================================== */
+header {
         display: flex;
         justify-content: center;
 }
-header button{
+header button {
         height: fit-content;
 }
-/* ===== Profil page ===== */
-.profile{
+
+/* ========================================================
+   PROFIL PAGE
+======================================================== */
+.profile {
         display: none;
         height: calc(100% - 60px);
         width: calc(100% - 60px);
@@ -42,7 +58,9 @@ header button{
         box-shadow: 0 0 50px #000;
 }
 
-/* ===== Formulaire ===== */
+/* ========================================================
+   FORMULAIRE
+======================================================== */
 form {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -72,7 +90,10 @@ button {
 /* button:hover {
         background: var(--accent-hover);
 } */
-/* ===== Filtres ===== */
+
+/* ========================================================
+   FILTRES
+======================================================== */
 .filters {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -82,7 +103,10 @@ button {
         border-radius: 8px;
         margin-bottom: 20px;
 }
-/* ===== Top 3 ===== */
+
+/* ========================================================
+   TABLEAU - TOP 3
+======================================================== */
 .top3Table {
         width: 100%;
         margin: auto;
@@ -96,13 +120,10 @@ button {
 .top3Table thead tr th {
         text-align: center;
 }
-.top3Table th, .top3Table td{
+.top3Table th, .top3Table td {
         padding: 1rem;
         text-align: left;
         border-bottom: 1px solid var(--bg);
-}
-
-.top3Table th ,.top3Table td{
         background: linear-gradient(45deg, #FFD700, #FFA500);
         color: #292b2e;
         text-transform: uppercase;
@@ -110,7 +131,9 @@ button {
         letter-spacing: 1px;
 }
 
-/* ===== Tableau ===== */
+/* ========================================================
+   TABLEAU - GÉNÉRAL
+======================================================== */
 table {
         width: 100%;
         border-collapse: collapse;
@@ -132,7 +155,6 @@ th {
 td input, td select {
         width: 100%;
 }
-
 tr {
         background-color: var(--card);
         transition: background-color 0.3s ease;
@@ -140,9 +162,29 @@ tr {
 tr:nth-child(even) {
         background-color: #2e2f31;
 }
+tr:last-child td {
+        border: none;
+}
 
-tr:last-child td {border: none;}
-
+/* ========================================================
+   BOUTONS ACTIONS TABLEAU
+======================================================== */
+.edit-btn {
+        background: #64b5f6;
+        color: #000;
+}
+.delete-btn {
+        background: var(--error);
+        color: #000;
+}
+.save-btn {
+        background: var(--accent);
+        color: #000;
+}
+.cancel-btn {
+        background: var(--error);
+        color: #000;
+}
 .delete-btn, .edit-btn, .save-btn, .cancel-btn {
         border: none;
         padding: 5px 8px;
@@ -151,16 +193,13 @@ tr:last-child td {border: none;}
         cursor: pointer;
         margin: 0 2px;
 }
-.edit-btn { background: #64b5f6; color: #000; }
-.delete-btn { background: var(--error); color: #000; }
-.save-btn { background: var(--accent); color: #000; }
-.cancel-btn { background: var(--error); color: #000; }
-/* ===== Champs spécifiques ===== */
-/* input[type="number"] { max-width: 80px; } */
 
+/* ========================================================
+   BOUTON VIDER
+======================================================== */
 .btn-clear-all {
-        background-color:  #cf3b43; /* #e57373 */
-        color: var(--text); /* #e3e3e3 */
+        background-color: #cf3b43;
+        color: var(--text);
         padding: 0.5rem 1rem;
         border: none;
         border-radius: 6px;
@@ -168,15 +207,16 @@ tr:last-child td {border: none;}
         cursor: pointer;
         transition: background-color 0.3s ease;
 }
-
 .btn-clear-all:hover {
-        background-color: #be3e45; /* un rouge un peu plus vif */
+        background-color: #be3e45;
 }
-            
-/* Style de base de la notification */
+
+/* ========================================================
+   NOTIFICATIONS
+======================================================== */
 #notification {
         position: fixed;
-        top: -100px; /* Commence en dehors de l'écran */
+        top: -100px;
         left: 50%;
         transform: translateX(-50%);
         background-color: #4CAF50;
@@ -185,30 +225,29 @@ tr:last-child td {border: none;}
         border-radius: 5px;
         font-size: 16px;
         max-width: 300px;
-        display: none; /* Cache par défaut */
+        display: none;
         z-index: 1000;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        opacity: 0; /* Initialement transparent */
-        transition: top 0.5s ease, opacity 0.5s ease; /* Transition d'animation */
+        opacity: 0;
+        transition: top 0.5s ease, opacity 0.5s ease;
 }
-
 #notification.error {
-background-color: #f44336; /* Rouge pour les erreurs */
+        background-color: #f44336;
 }
-
 #notification.success {
-background-color: #4CAF50; /* Vert pour le succès */
+        background-color: #4CAF50;
 }
-
 #notification.warning {
-background-color: #ff9800; /* Orange pour les avertissements */
+        background-color: #ff9800;
 }
-
 #notification p {
-margin: 0;
-padding: 0;
+        margin: 0;
+        padding: 0;
 }
 
+/* ========================================================
+   MODALE DE PARAMÈTRES
+======================================================== */
 #saveSettingsBtn {
         background-color: var(--accent);
         color: #000;
@@ -219,45 +258,45 @@ padding: 0;
         cursor: pointer;
         margin: 0 2px;
 }
-#settingsModal{
-        display: none; 
+#settingsModal {
+        display: none;
         flex-direction: column;
-        position: fixed; 
+        position: fixed;
         top: 30px;
         left: 30px;
         width: calc(100% - 60px);
         height: calc(100% - 60px);
-        border: 1px solid var(--muted); 
-        background: var(--card); 
-        padding: 20px; 
-        border-radius: 8px; 
-        box-shadow: 0 0 50px #000; 
-        z-index: 999;        
+        border: 1px solid var(--muted);
+        background: var(--card);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 50px #000;
+        z-index: 999;
 }
-#settingsModal input{
+#settingsModal input {
         width: fit-content;
 }
-.settingsModalHead{
+.settingsModalHead {
         display: flex;
         justify-content: space-between;
 }
-/* ===== Gestion des statuts ===== */
-.status{
+
+/* ========================================================
+   STATUTS
+======================================================== */
+.status {
         padding: 4px;
         border-radius: 4px;
 }
 .status.vue {
-        background-color: rgba(0, 255, 60, 0.2); /* Vert */
+        background-color: rgba(0, 255, 60, 0.2);
 }
-
 .status.encour {
-        background-color: rgba(0, 140, 255, 0.2); /* bleu */
+        background-color: rgba(0, 140, 255, 0.2);
 }
-
 .status.avoir {
-        background-color: rgba(252, 42, 42, 0.2); /* Rouge */
+        background-color: rgba(252, 42, 42, 0.2);
 }
 .status.arret {
-        background-color: rgb(172, 172, 172, 0.2); /* blanc */
+        background-color: rgb(172, 172, 172, 0.2);
 }
-      

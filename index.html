@@ -9,42 +9,37 @@
 </head>
 <body>
   <header>
-    <!-- <button id="openProfilBtn">
-      Profil 🤠
-    </button> -->
-    <h1>🎬Ma Liste de Films🎬</h1>
+    <h1 title="Votre bibliothèque de films, séries et animes">🎬Ma Liste de Films🎬</h1>
   </header>
-  <div class="profile">
+  <div class="profile" title="Profil utilisateur">
     p
   </div>
   
-  <!-- Conteneur de la notification -->
   <div id="notification">
     <p id="notificationMessage"></p>
   </div>
 
-  <!-- Fenêtre modale des paramètres -->
   <div id="settingsModal">
     <div class="settingsModalHead">
-      <h3>Paramètres</h3>
+      <h3 title="Modifier les préférences">Paramètres</h3>
       <div>
-        <button id="saveSettingsBtn" title="Sauvegarder">💾</button>
-        <button id="closeSettingsBtn" class="cancel-btn" title="Fermer">❌</button>
+        <button id="saveSettingsBtn" title="Sauvegarder les paramètres">💾</button>
+        <button id="closeSettingsBtn" class="cancel-btn" title="Fermer la fenêtre des paramètres">❌</button>
       </div>
     </div><br>
     <label for="backupNameInput">Nom du fichier backup :</label><br>
-    <input type="text" id="backupNameInput" style="margin-top: 5px; padding: 5px;" /><br><br>
+    <input type="text" id="backupNameInput" style="margin-top: 5px; padding: 5px;" title="Nom du fichier de sauvegarde JSON" /><br><br>
   </div>
 
   <form id="filmForm">
-    <input type="text" id="title" placeholder="Titre…" required>
-    <select id="type" >
+    <input type="text" id="title" placeholder="Titre…" required title="Titre du film, série ou anime">
+    <select id="type" title="Choisissez le type de contenu">
       <option value="">Type…</option>
       <option>Film</option>
       <option>Serie</option>
       <option>Anime</option>
     </select>
-    <select id="genres">
+    <select id="genres" title="Choisissez un genre">
       <option value="">Genres…</option>
       <option>action</option>
       <option>aventures</option>
@@ -59,7 +54,7 @@
       <option>comédie</option>
       <option>criminel</option>
     </select>
-    <select id="platform" >
+    <select id="platform" title="Plateforme où regarder le contenu">
       <option value="">Plateforme…</option>
       <option>Netflix</option>
       <option>Métropolitan Films</option>
@@ -76,63 +71,59 @@
       <option>Plex / Pluto TV</option>
       <option>Autres</option>
     </select>
-    <select id="priority" >
+    <select id="priority" title="Niveau d’envie de regarder ce contenu">
       <option value="">Priorité…</option>
       <option>Basse</option>
       <option>Moyenne</option>
       <option>Haute</option>
       <option>Légende</option>
     </select>
-    <select id="statu" >
+    <select id="statu" title="Statut du visionnage">
       <option value="">Statut…</option>
       <option>Arret</option>
       <option>Vue</option>
       <option>En cour</option>
       <option>A voir</option>
     </select>
-    <input type="number"  min="2000" max="2100" placeholder="2025…"  id="date" >
-    <button type="submit">Ajouter ➕</button>
-    <button type="" class="btn-clear-all" onclick="clearAllFilms()">Effacer 🗑️</button>
-
+    <input type="number" min="2000" max="2100" placeholder="2025…" id="date" title="Année de sortie ou de visionnage">
+    <button type="submit" title="Ajouter ce contenu à la liste">Ajouter ➕</button>
+    <button type="" class="btn-clear-all" onclick="clearAllFilms()" title="Effacer tous les contenus de la liste">Effacer 🗑️</button>
   </form>
-  <form id="formulaire-edition" style="display: none;" onsubmit="sauvegarderEdition(event)">
-  <input type="hidden" id="edit-id">
-  <input type="text" id="edit-nom" placeholder="Nom">
-  <input type="text" id="edit-genre" placeholder="Genre">
-  <input type="text" id="edit-type" placeholder="Type">
-  <input type="text" id="edit-langue" placeholder="Langue">
-  <button type="submit">💾 Sauvegarder</button>
-</form>
+
+  <form id="formulaire-edition" style="display: none;" onsubmit="sauvegarderEdition(event)" title="Modifier un contenu existant">
+    <input type="hidden" id="edit-id">
+    <input type="text" id="edit-nom" placeholder="Nom" title="Modifier le titre">
+    <input type="text" id="edit-genre" placeholder="Genre" title="Modifier le genre">
+    <input type="text" id="edit-type" placeholder="Type" title="Modifier le type">
+    <input type="text" id="edit-langue" placeholder="Langue" title="Modifier la langue">
+    <button type="submit" title="Sauvegarder les modifications">💾 Sauvegarder</button>
+  </form>
 
   <div class="filters">
-    <select id="filterType">
+    <select id="filterType" title="Filtrer par type de contenu">
       <option value="">Tous types</option>
     </select>
-    <select id="filterPlatform">
+    <select id="filterPlatform" title="Filtrer par plateforme">
       <option value="">Toutes plateformes</option>
     </select>
-    <select id="filterPriority">
+    <select id="filterPriority" title="Filtrer par priorité">
       <option value="">Toutes priorités</option>
     </select>
-    <select id="filterStatus">
+    <select id="filterStatus" title="Filtrer par statut">
       <option value="">Tous statuts</option>
     </select>
-    <select id="filterDate">
+    <select id="filterDate" title="Filtrer par année">
       <option value="">Toutes dates</option>
       <option>2024</option>
     </select>
-    <input type="text" id="filterTitre" placeholder="Filtrer par titre">
-    <button id="exportBtn">Exporter JSON 📤</button>
-    <button id="importBtn">Importer JSON 📥</button>
-    <input type="file" id="importInput" accept="application/json" style="display:none" />
-     
-    <!-- Bouton pour ouvrir les paramètres -->
-    <button id="openSettingsBtn">
-      Paramètres ⚙️
-    </button>
+    <input type="text" id="filterTitre" placeholder="Filtrer par titre" title="Rechercher un titre spécifique">
+    <button id="exportBtn" title="Exporter la liste au format JSON">Exporter JSON 📤</button>
+    <button id="importBtn" title="Importer une liste JSON existante">Importer JSON 📥</button>
+    <input type="file" id="importInput" accept="application/json" style="display:none" title="Fichier JSON à importer" />
+    <button id="openSettingsBtn" title="Ouvrir les paramètres">Paramètres ⚙️</button>
   </div>
-  
-  <table id="top3Table" class="top3Table">
+
+  <table id="top3Table" class="top3Table" title="Vos 3 contenus favoris">
     <thead>
       <tr>
         <th colspan="6">Top 3 des Meilleurs Films</th>
@@ -151,7 +142,7 @@
     </tbody>
   </table>
 
-  <table id="filmTable">
+  <table id="filmTable" title="Liste complète de vos contenus">
     <thead>
       <tr>
         <th>Titre</th><th>Type</th><th>Genres</th><th>Plateforme</th><th>Priorité</th><th>Statut</th><th>Date</th><th>Actions</th>
@@ -172,11 +163,11 @@
       </tr>
     </tbody>
   </table>
-  <footer style="text-align: center;">
+
+  <footer style="text-align: center;" title="Merci de votre visite 🎬">
     <p>© 2025 - Créé par Arthur Songwa-Nkuiga. Tous droits réservés.</p>
   </footer>
 
-  <!-- <script src="script.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/dexie@3/dist/dexie.min.js"></script>
   <script src="script.js"></script>
 </body>
