@@ -392,7 +392,7 @@ openBtn.addEventListener("click", () => {
 // fermer la modale
 closeBtn.addEventListener("click", () => {
   settingsModal.style.display = "none";
-  document.body.style.overflow = "scroll"
+  document.body.style.overflow = "auto"
 });
 
 // Fermer le modal si on clique en dehors
