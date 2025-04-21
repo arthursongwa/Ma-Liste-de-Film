@@ -168,6 +168,7 @@ async function updateFilters() {
         }else if(key == "platform"){
           select.innerHTML = `
             <option>Netflix</option>
+            <option>Métropolitan Films</option>
             <option>Amazon Prime Video</option>
             <option>Disney+</option>
             <option>Apple TV+</option>
