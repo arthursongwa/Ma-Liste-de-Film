@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma Liste de Films</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="icon.png">
+</head>
+<body>
+  <h1>🎬Ma Liste de Films🎬</h1>
+  <!-- Conteneur de la notification -->
+  <div id="notification">
+    <p id="notificationMessage"></p>
+  </div>
+
+  <!-- Fenêtre modale des paramètres -->
+  <div id="settingsModal">
+    <h3>Paramètres</h3>
+    <label for="backupNameInput">Nom du fichier backup :</label><br>
+    <input type="text" id="backupNameInput" style="margin-top: 5px; padding: 5px;" /><br><br>
+    <button id="saveSettingsBtn">💾 Sauvegarder</button>
+  </div>
+
+  <form id="filmForm">
+    <input type="text" id="title" placeholder="Titre…" required>
+    <select id="type" >
+      <option value="">Type…</option>
+      <option>Film</option>
+      <option>Serie</option>
+      <option>Anime</option>
+    </select>
+    <select id="genres">
+      <option value="">Genres…</option>
+      <option>action</option>
+      <option>aventures</option>
+      <option>catastrophe</option>
+      <option>drame</option>
+      <option>cinéma </option>
+      <option>fantasy</option>
+      <option>horreur</option>
+      <option>science-fiction</option>
+      <option>thriller</option>
+      <option>comédie</option>
+      <option>criminel</option>
+    </select>
+    <select id="platform" >
+      <option value="">Plateforme…</option>
+      <option>Netflix</option>
+      <option>Amazon Prime Video</option>
+      <option>Disney+</option>
+      <option>Apple TV+</option>
+      <option>Paramount+</option>
+      <option>Canal+</option>
+      <option>OCS</option>
+      <option>HBO Max</option>
+      <option>Arte.tv</option>
+      <option>Crunchyroll</option>
+      <option>Plex / Pluto TV</option>
+      <option>Autres</option>
+    </select>
+    <select id="priority" >
+      <option value="">Priorité…</option>
+      <option>Basse</option>
+      <option>Moyenne</option>
+      <option>Haute</option>
+      <option>Légende</option>
+    </select>
+    <select id="statu" >
+      <option value="">Statut…</option>
+      <option>Arret</option>
+      <option>Vue</option>
+      <option>En cour</option>
+      <option>A voir</option>
+    </select>
+    <input type="number"  min="2000" max="2100" placeholder="2025…"  id="date" >
+    <button type="submit">Ajouter ➕</button>
+    <button type="" class="btn-clear-all" onclick="clearAllFilms()">Effacer 🗑️</button>
+
+  </form>
+  <form id="formulaire-edition" style="display: none;" onsubmit="sauvegarderEdition(event)">
+  <input type="hidden" id="edit-id">
+  <input type="text" id="edit-nom" placeholder="Nom">
+  <input type="text" id="edit-genre" placeholder="Genre">
+  <input type="text" id="edit-type" placeholder="Type">
+  <input type="text" id="edit-langue" placeholder="Langue">
+  <button type="submit">💾 Sauvegarder</button>
+</form>
+
+  <div class="filters">
+    <select id="filterType">
+      <option value="">Tous types</option>
+    </select>
+    <select id="filterPlatform">
+      <option value="">Toutes plateformes</option>
+    </select>
+    <select id="filterPriority">
+      <option value="">Toutes priorités</option>
+    </select>
+    <select id="filterStatus">
+      <option value="">Tous statuts</option>
+    </select>
+    <select id="filterDate">
+      <option value="">Toutes dates</option>
+      <option>2024</option>
+    </select>
+    <input type="text" id="filterTitre" placeholder="Filtrer par titre">
+    <button id="exportBtn">Exporter JSON 📤</button>
+    <button id="importBtn">Importer JSON 📥</button>
+    <input type="file" id="importInput" accept="application/json" style="display:none" />
+    <!-- Bouton pour ouvrir les paramètres -->
+    <button id="openSettingsBtn">
+      Paramètres ⚙️
+    </button>
+  </div>
+  
+  <table id="top3Table" class="top3Table">
+    <thead>
+      <tr>
+        <th colspan="6">Top 3 des Meilleurs Films</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Titre</td><td>Type</td><td>Genres</td><td>Plateforme</td><td>Statut</td><td>Date</td>
+      </tr>
+      <tr>
+        <td>Titre</td><td>Type</td><td>Genres</td><td>Plateforme</td><td>Statut</td><td>Date</td>
+      </tr>
+      <tr>
+        <td>Titre</td><td>Type</td><td>Genres</td><td>Plateforme</td><td>Statut</td><td>Date</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table id="filmTable">
+    <thead>
+      <tr>
+        <th>Titre</th><th>Type</th><th>Genres</th><th>Plateforme</th><th>Priorité</th><th>Statut</th><th>Date</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Titre</td><td>Type</td><td>Genres</td><td>Plateforme</td><td>Priorité</td><td>Statut</td><td>Date</td><td>Actions</td>
+      </tr>
+      <tr>
+        <td>Titre</td><td>Type</td><td>Genres</td><td>Plateforme</td><td>Priorité</td><td>Statut</td><td>Date</td><td>Actions</td>
+      </tr>
+      <tr>
+        <td>Titre</td><td>Type</td><td>Genres</td><td>Plateforme</td><td>Priorité</td><td>Statut</td><td>Date</td><td>Actions</td>
+      </tr>
+      <tr>
+        <td>Titre</td><td>Type</td><td>Genres</td><td>Plateforme</td><td>Priorité</td><td>Statut</td><td>Date</td><td>Actions</td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+  <!-- <script src="script.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/dexie@3/dist/dexie.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

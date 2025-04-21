@@ -1,0 +1,231 @@
+/* ===== Variables de couleurs ===== */
+:root {
+        --bg: #292b2e;
+        --card: #373a3c;
+        --text: #e3e3e3;
+        --muted: #b3b3b3;
+        --accent: #81c784;
+        --accent-hover: #66bb6a;
+        --error: #e57373;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Segoe UI', sans-serif;
+        padding: 20px;
+}
+h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--accent);
+}
+/* ===== Formulaire ===== */
+form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        background: var(--card);
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+}
+input, select, button {
+        background: var(--bg);
+        color: var(--text);
+        border: 1px solid var(--muted);
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 0.95rem;
+}
+input:focus, select:focus {
+        outline: 2px solid var(--accent);
+}
+button {
+        background: var(--accent);
+        color: #000;
+        cursor: pointer;
+        transition: background 0.3s;
+}
+/* button:hover {
+        background: var(--accent-hover);
+} */
+/* ===== Filtres ===== */
+.filters {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        background: var(--card);
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+}
+/* ===== Top 3 ===== */
+.top3Table {
+        width: 100%;
+        margin: auto;
+        border-collapse: collapse;
+        background-color: var(--card);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        margin-bottom: 20px;
+}
+.top3Table thead tr th {
+        text-align: center;
+}
+.top3Table th, .top3Table td{
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--bg);
+}
+
+.top3Table th ,.top3Table td{
+        background: linear-gradient(45deg, #FFD700, #FFA500);
+        color: #292b2e;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+}
+
+/* ===== Tableau ===== */
+table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--card);
+        border-radius: 8px;
+        overflow: hidden;
+        table-layout: fixed;
+        margin-bottom: 20px;
+}
+th, td {
+        padding: 12px;
+        text-align: left;
+}
+th {
+        background: #3e3f41;
+        color: var(--text);
+        border: none;
+}
+td input, td select {
+        width: 100%;
+}
+
+tr {
+        background-color: var(--card);
+        transition: background-color 0.3s ease;
+}
+tr:nth-child(even) {
+        background-color: #2e2f31;
+}
+
+tr:last-child td {border: none;}
+
+.delete-btn, .edit-btn, .save-btn, .cancel-btn {
+        border: none;
+        padding: 5px 8px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        margin: 0 2px;
+}
+.edit-btn { background: #64b5f6; color: #000; }
+.delete-btn { background: var(--error); color: #000; }
+.save-btn { background: var(--accent); color: #000; }
+.cancel-btn { background: var(--error); color: #000; }
+/* ===== Champs spécifiques ===== */
+/* input[type="number"] { max-width: 80px; } */
+
+.btn-clear-all {
+        background-color:  #cf3b43; /* #e57373 */
+        color: var(--text); /* #e3e3e3 */
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+}
+
+.btn-clear-all:hover {
+        background-color: #be3e45; /* un rouge un peu plus vif */
+}
+            
+/* Style de base de la notification */
+#notification {
+        position: fixed;
+        top: -100px; /* Commence en dehors de l'écran */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        max-width: 300px;
+        display: none; /* Cache par défaut */
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        opacity: 0; /* Initialement transparent */
+        transition: top 0.5s ease, opacity 0.5s ease; /* Transition d'animation */
+}
+
+#notification.error {
+background-color: #f44336; /* Rouge pour les erreurs */
+}
+
+#notification.success {
+background-color: #4CAF50; /* Vert pour le succès */
+}
+
+#notification.warning {
+background-color: #ff9800; /* Orange pour les avertissements */
+}
+
+#notification p {
+margin: 0;
+padding: 0;
+}
+
+#saveSettingsBtn {
+        background-color: var(--accent);
+        color: #000;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+}
+#settingsModal{
+        display: none; 
+        position: fixed; 
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid var(--muted); 
+        background: var(--card); 
+        padding: 20px; 
+        border-radius: 8px; 
+        box-shadow: 0 0 50px #000; 
+        z-index: 1000;
+}
+/* ===== Gestion des statuts ===== */
+.status{
+        padding: 4px;
+        border-radius: 4px;
+}
+.status.vue {
+        background-color: rgba(0, 255, 60, 0.2); /* Vert */
+}
+
+.status.encour {
+        background-color: rgba(0, 140, 255, 0.2); /* bleu */
+}
+
+.status.avoir {
+        background-color: rgba(252, 42, 42, 0.2); /* Rouge */
+}
+.status.arret {
+        background-color: rgb(172, 172, 172, 0.2); /* blanc */
+}
+      
