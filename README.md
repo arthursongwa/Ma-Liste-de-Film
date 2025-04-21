@@ -47,7 +47,7 @@ MyListfilm/
 
 | Tableau principal | Ajout / Filtres |
 |-------------------|-----------------|
-| ![Aperçu 1](https://github.com/user-attachments/assets/bd4a6704-a8a9-4453-92d5-ea008a1cf27b) | ![Aperçu 2](https://github.com/user-attachments/assets/c2e73552-d4e9-4e38-af37-6434f244f23f) |
+| ![Aperçu 1](image.png) | ![Aperçu 2](image-1.png) |
 
 ---
 
@@ -70,3 +70,7 @@ L’application est hébergée gratuitement via **GitHub Pages**.
 ---
 
 ## 🙌 Remerciements
+
+Merci à tous ceux qui testent, donnent leur avis ou proposent des améliorations 🙏
+
+---
