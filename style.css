@@ -19,10 +19,10 @@
         --white: #ffffff;
         --shadow-dark: rgba(0, 0, 0, 0.2);
         --shadow-light: rgba(0, 0, 0, 0.05);
-      }
+}
       
-      /* ====== Light mode ====== */
-      body.light-mode {
+/* ====== Light mode ====== */
+body.light-mode {
         --bg: #f4f6f8;
         --card: #ffffff;
         --card2: #f9f9f9;
@@ -33,40 +33,39 @@
         --accent-hover: #43a047;
         --error: #e53935;
         --btncolor: #ffffff;
-      }
-      
-      /* ====== Reset & base ====== */
-      * {
+}
+
+/* ====== Reset & base ====== */
+* {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-      }
-      body {
+}
+body {
         background: var(--bg);
         color: var(--text);
         font-family: 'Segoe UI', sans-serif;
         padding: 20px;
-      }
-      
-      /* ====== Titres ====== */
-      h1 {
+}
+
+/* ====== Titres ====== */
+h1 {
         text-align: center;
         margin-bottom: 20px;
         color: var(--accent);
-      }
-      
-      /* ====== Header ====== */
-      header {
+}
+
+/* ====== Header ====== */
+header {
         display: flex;
         justify-content: center;
-      }
-      header button {
+}
+header button {
         height: fit-content;
-      }
-      
-      /* ====== Sections communes (formulaires, filtres) ====== */
-      form,
-      .filters {
+}
+
+/* ====== Sections communes (formulaires, filtres) ====== */
+form, .filters {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
@@ -74,38 +73,34 @@
         padding: 20px;
         border-radius: 8px;
         margin-bottom: 20px;
-      }
-      
-      /* ====== Inputs ====== */
-      input,
-      select,
-      button {
+}
+
+/* ====== Inputs ====== */
+input, select, button {
         background: var(--bg);
         color: var(--text);
         border: 1px solid var(--muted);
         padding: 10px;
         border-radius: 4px;
         font-size: 0.95rem;
-      }
-      input:focus,
-      select:focus {
+}
+input:focus, select:focus {
         outline: 2px solid var(--accent);
-      }
-      
-      /* ====== Boutons ====== */
-      button {
+}
+
+/* ====== Boutons ====== */
+button {
         background: var(--accent);
         color: var(--btncolor);
         cursor: pointer;
         transition: background 0.3s;
-      }
-      button:hover {
+}
+button:hover {
         background: var(--accent-hover);
-      }
-      
-      /* ====== Profil & Modals ====== */
-      .profile,
-      #settingsModal {
+}
+
+/* ====== Profil & Modals ====== */
+.profile, #settingsModal {
         display: none;
         flex-direction: column;
         position: fixed;
@@ -119,103 +114,94 @@
         padding: 20px;
         box-shadow: 0 0 50px var(--btncolor);
         z-index: 999;
-      }
-      .profile {
+}
+.profile {
         display: none;
-      }
-      .settingsModalHead {
+}
+.settingsModalHead {
         display: flex;
         justify-content: space-between;
-      }
-      #settingsModal input, #settingsModal button {
+}
+#settingsModal input, #settingsModal button {
         width: fit-content;
-      }
-      
-      /* ====== Tables ====== */
-      table,
-      .top3Table {
+}
+
+/* ====== Tables ====== */
+table, .top3Table {
         width: 100%;
         border-collapse: collapse;
         border-radius: 8px;
         overflow: hidden;
         margin-bottom: 20px;
         table-layout: fixed;
-      }
-      
-      /* Table normale */
-      table {
+}
+
+/* Table normale */
+table {
         background: var(--card);
-      }
-      th,
-      td {
+}
+th,
+td {
         padding: 12px;
         text-align: left;
-      }
-      th {
+}
+th {
         background: var(--card3);
         color: var(--text);
         border: none;
-      }
-      td input,
-      td select {
+}
+td input, td select {
         width: 100%;
-      }
-      tr {
+}
+tr {
         background-color: var(--card);
         transition: background-color 0.3s ease;
-      }
-      tr:nth-child(even) {
+}
+tr:nth-child(even) {
         background-color: var(--card2);
-      }
-      tr:last-child td {
+}
+tr:last-child td {
         border: none;
-      }
-      
-      /* Table Top 3 */
-      .top3Table {
+}
+
+/* Table Top 3 */
+.top3Table {
         background-color: var(--card);
         box-shadow: 0 0 15px var(--gold);
-      }
-      .top3Table th,
-      .top3Table td {
+}
+.top3Table th, .top3Table td {
         background: linear-gradient(45deg, var(--gold), var(--orange));
         color: #292b2e;
         text-transform: uppercase;
         font-size: 0.9rem;
         letter-spacing: 1px;
         text-align: center;
-      }
-      
-      /* ====== Boutons d’action ====== */
-      .edit-btn {
+}
+
+/* ====== Boutons d’action ====== */
+.edit-btn {
         background: var(--blue);
         color: var(--btncolor);
-      }
-      .delete-btn,
-      .cancel-btn {
+}
+.delete-btn, .cancel-btn {
         background: var(--error);
         color: var(--btncolor);
-      }
-      .save-btn,
-      #saveSettingsBtn {
+}
+.save-btn, #saveSettingsBtn {
         background: var(--accent);
         color: var(--btncolor);
-      }
-      .delete-btn,
-      .edit-btn,
-      .save-btn,
-      .cancel-btn,
-      #saveSettingsBtn {
+}
+.delete-btn, .edit-btn, .save-btn, .cancel-btn, #saveSettingsBtn {
         border: none;
         padding: 5px 8px;
         border-radius: 4px;
         font-size: 0.85rem;
         cursor: pointer;
         margin: 0 2px;
-      }
-      
-      /* ====== Bouton clear all ====== */
-      .btn-clear-all {
+}
+
+/* ====== Bouton clear all ====== */
+.btn-clear-all {
         background-color: #cf3b43;
         color: white;
         padding: 0.5rem 1rem;
@@ -224,13 +210,13 @@
         font-size: 0.95rem;
         cursor: pointer;
         transition: background-color 0.3s ease;
-      }
-      .btn-clear-all:hover {
+}
+.btn-clear-all:hover {
         background-color: #be3e45;
-      }
-      
-      /* ====== Notification ====== */
-      #notification {
+}
+
+/* ====== Notification ====== */
+#notification {
         position: fixed;
         top: -100px;
         left: 50%;
@@ -246,36 +232,36 @@
         box-shadow: 0 2px 5px var(--shadow-dark);
         opacity: 0;
         transition: top 0.5s ease, opacity 0.5s ease;
-      }
-      #notification.error {
+}
+#notification.error {
         background-color: var(--error);
-      }
-      #notification.success {
+}
+#notification.success {
         background-color: var(--accent);
-      }
-      #notification.warning {
+}
+#notification.warning {
         background-color: #ff9800;
-      }
-      #notification p {
+}
+#notification p {
         margin: 0;
         padding: 0;
-      }
-      
-      /* ====== Statuts ====== */
-      .status {
+}
+
+/* ====== Statuts ====== */
+.status {
         padding: 4px;
         border-radius: 4px;
-      }
-      .status.vue {
+}
+.status.vue {
         background-color: rgba(0, 255, 60, 0.2);
-      }
-      .status.encour {
+}
+.status.encour {
         background-color: rgba(0, 140, 255, 0.2);
-      }
-      .status.avoir {
+}
+.status.avoir {
         background-color: rgba(252, 42, 42, 0.2);
-      }
-      .status.arret {
+}
+.status.arret {
         background-color: rgba(172, 172, 172, 0.2);
-      }
+}
       

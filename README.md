@@ -47,7 +47,7 @@ MyListfilm/
 
 | Ajout / Filtres | Tableau principal |
 |-------------------|-----------------|
-| ![Aperçu 1](image.png) | ![Aperçu 2](image-1.png) |
+| ![Aperçu 1](img/image.png) | ![Aperçu 2](img/image-1.png) |
 
 ---
 
