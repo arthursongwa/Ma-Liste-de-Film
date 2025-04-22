@@ -7,6 +7,9 @@ const settingsModal = document.getElementById("settingsModal");
 const saveBtn = document.getElementById("saveSettingsBtn");
 const input = document.getElementById("backupNameInput");
 
+document.body.classList.toggle('light-mode');
+
+
 // Initialisation de la base Dexie
 const db = new Dexie("filmseDB");
 db.version(1).stores({

@@ -45,7 +45,7 @@ MyListfilm/
 
 ## 📸 Aperçu de l'application
 
-| Tableau principal | Ajout / Filtres |
+| Ajout / Filtres | Tableau principal |
 |-------------------|-----------------|
 | ![Aperçu 1](image.png) | ![Aperçu 2](image-1.png) |
 
