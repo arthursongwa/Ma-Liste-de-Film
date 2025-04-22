@@ -13,10 +13,14 @@ Une application web minimaliste et rapide qui vous permet de **gérer les films,
 - 🖊️ **Modification et édition** des fiches à tout moment
 - 🗑️ **Suppression** simple des médias
 - 🔝 **Affichage automatique du Top 3** de vos contenus favoris
-- 💾 **Stockage local** via `localStorage` (aucune base de données externe)
-- ⚙️ **Réglages personnalisés** accessibles dans une modale
 - 📎 **Filtres dynamiques** pour trier et organiser votre liste
+- 💾 **Stockage local** via `localStorage` (aucune base de données externe)
 - 🔔 **Notifications animées** en cas d’actions réussies ou d’erreurs
+- 📊 **Statistiques visibles** : nombre total de médias, répartitions par statut
+- 🎯 **Objectif personnel** : possibilité de définir un objectif hebdomadaire de visionnage
+- 💡 **Suggestions de recommandations** : système interne qui propose des titres à (re)découvrir depuis vos listes
+- 🌙/☀️ **Mode clair/sombre** basculable dynamiquement
+- 🔐 **Sauvegarde et restauration** manuelle via fichiers `.json`
 
 ---
 
@@ -46,7 +50,7 @@ MyListfilm/
 ## 📸 Aperçu de l'application
 
 | Ajout / Filtres | Tableau principal |
-|-------------------|-----------------|
+|-----------------|-------------------|
 | ![Aperçu 1](img/image.png) | ![Aperçu 2](img/image-1.png) |
 
 ---
@@ -61,6 +65,18 @@ L’application est hébergée gratuitement via **GitHub Pages**.
 
 ---
 
+## ⚙️ Paramètres intégrés
+
+La modale "Paramètres" permet de :
+- 🎨 Changer de thème clair/sombre
+- 💾 Définir un nom de fichier pour les sauvegardes
+- 📥 Importer/Exporter ses données
+- 🧼 Réinitialiser toutes les données
+- 📊 Voir des statistiques globales sur les médias suivis
+- 🎯 Définir un objectif de visionnage hebdomadaire
+
+---
+
 ## 🧑‍💻 Auteur
 
 **Arthur Songwa-Nkuiga**  
@@ -72,5 +88,3 @@ L’application est hébergée gratuitement via **GitHub Pages**.
 ## 🙌 Remerciements
 
 Merci à tous ceux qui testent, donnent leur avis ou proposent des améliorations 🙏
-
----
