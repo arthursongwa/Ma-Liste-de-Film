@@ -216,6 +216,18 @@ tr:last-child td {
         background-color: #be3e45;
 }
 
+/* ====== footer ====== */
+footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+footer .data-count {
+        font-weight: 700;
+        color: var(--blue);
+}
+
+
 /* ====== Notification ====== */
 #notification {
         position: fixed;

@@ -1,5 +1,13 @@
 let backupFileName = "Movie_backup.json"; // Valeur par défaut
 
+// Variables de data de films, séries et animes
+let nbr_films = 0; // Nombre de films
+let nbr_series = 0; // Nombre de séries
+let nbr_animes = 0; // Nombre d'animes
+
+const data_serie = document.getElementById("data-serie"); // Nombre de séries
+const data_anime = document.getElementById("data-anime"); // Nombre d'animes
+
 // Boutons
 const openBtn = document.getElementById("openSettingsBtn");
 const closeBtn = document.getElementById("closeSettingsBtn");
@@ -58,6 +66,17 @@ async function renderFilms() {
 
   films.forEach((film) => {
     const tr = document.createElement("tr");
+
+    if(film.type == "Film"){
+      nbr_films += 1; // Incrémente le nombre de films
+    }else if(film.type == "Serie"){
+      nbr_series += 1; // Incrémente le nombre de séries  
+    }else if(film.type == "Anime"){
+      nbr_animes += 1; // Incrémente le nombre d'animes
+    }
+    // Affichage du nombre de films, séries et animes
+    data_serie.innerHTML = `${nbr_films} Films et ${nbr_series} Séries`; // Affiche le nombre de séries
+    data_anime.innerHTML = `${nbr_animes} Animes`; // Affiche le nombre d'animes
 
     tr.innerHTML = `
       <td title="Titre">${film.title}</td>
