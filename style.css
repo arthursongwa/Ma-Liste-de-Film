@@ -9,7 +9,8 @@
         --muted: #b3b3b3;
         --accent: #81c784;
         --accent-hover: #66bb6a;
-        --error: #e57373;
+        --error: #be3e45;
+        --success: rgba(0, 255, 60, 0.5);
         --btncolor: #000;
       
         /* Couleurs générales */
@@ -237,7 +238,7 @@ tr:last-child td {
         background-color: var(--error);
 }
 #notification.success {
-        background-color: var(--accent);
+        background-color: var(--success);
 }
 #notification.warning {
         background-color: #ff9800;

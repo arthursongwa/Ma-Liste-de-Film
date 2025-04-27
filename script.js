@@ -60,16 +60,16 @@ async function renderFilms() {
     const tr = document.createElement("tr");
 
     tr.innerHTML = `
-      <td>${film.title}</td>
-      <td>${film.type}</td>
-      <td>${film.genres}</td>
-      <td>${film.platform}</td>
-      <td>${film.priority}</td>
-      <td><span class="status ${getStatusClass(film.status)}">${film.status}</span></td>
-      <td>${film.date}</td>
+      <td title="Titre">${film.title}</td>
+      <td title="Type">${film.type}</td>
+      <td title="Genre">${film.genres}</td>
+      <td title="Platforme">${film.platform}</td>
+      <td title="Priorité">${film.priority}</td>
+      <td title="Status"><span class="status ${getStatusClass(film.status)}">${film.status}</span></td>
+      <td title="Date de sortie">${film.date}</td>
       <td>
-        <button class="edit-btn">✏️</button>
-        <button class="delete-btn" onclick="deleteFilm(${film.id})">🗑️</button>
+        <button class="edit-btn"  title="Modifier">✏️</button>
+        <button class="delete-btn"  title="Supprimer" onclick="deleteFilm(${film.id})">🗑️</button>
         </td>
     `;
 
@@ -132,6 +132,7 @@ async function updateFilters() {
       
       if (key === 'date') {
         input.type = 'number';
+        input.setAttribute("title", "Année de sortie ou de visionnage");
         input.min = 2000;
         input.max = 2100;
         inputs[key] = input;
@@ -139,13 +140,16 @@ async function updateFilters() {
         tr.appendChild(td);
       }
       else if(key == 'title'){
+        input.setAttribute("title", "Titre du film, série ou anime");
         inputs[key] = input;
+        
         td.appendChild(input);
         tr.appendChild(td);
       }
       else{
         const select = document.createElement('select');
         if(key == "type"){
+          select.setAttribute("title", "Choisissez le type de contenu");
           select.innerHTML = `
             <option>Film</option>
             <option>Serie</option>
@@ -153,6 +157,7 @@ async function updateFilters() {
           `;
           select.value = Array.isArray(film[key]) ? film[key].join(", ") : film[key];
         }else if(key == "genres"){
+          select.setAttribute("title", "Choisissez un genre");
           select.innerHTML = `
             <option>action</option>
             <option>aventures</option>
@@ -169,6 +174,7 @@ async function updateFilters() {
           `;
           select.value = Array.isArray(film[key]) ? film[key].join(", ") : film[key];
         }else if(key == "platform"){
+          select.setAttribute("title", "Plateforme où regarder le contenu");
           select.innerHTML = `
             <option>Netflix</option>
             <option>Métropolitan Films</option>
@@ -187,6 +193,7 @@ async function updateFilters() {
           `;
           select.value = Array.isArray(film[key]) ? film[key].join(", ") : film[key];
         }else if(key == "priority"){
+          select.setAttribute("title", "Niveau d’envie de regarder ce contenu");
           select.innerHTML = `
             <option>Basse</option>
             <option>Moyenne</option>
@@ -195,6 +202,7 @@ async function updateFilters() {
           `;
           select.value = Array.isArray(film[key]) ? film[key].join(", ") : film[key];
         }else if(key == "status"){
+          select.setAttribute("title", "Statut du visionnage");
           select.innerHTML = `
             <option>Arret</option>
             <option>Vue</option>
@@ -214,10 +222,12 @@ async function updateFilters() {
   
     const saveBtn = document.createElement('button');
     saveBtn.textContent = '💾';
+    saveBtn.setAttribute("title", "Sauvegarder les modifications");
     saveBtn.className = 'save-btn';
   
     const cancelBtn = document.createElement('button');
     cancelBtn.textContent = '❌';
+    cancelBtn.setAttribute("title", "Annuler les modifications");
     cancelBtn.className = 'cancel-btn';
   
     tdActions.appendChild(saveBtn);
