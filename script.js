@@ -52,6 +52,7 @@ function getStatusClass(status) {
 async function renderFilms() {
   console.log("rendu");
   const films = await db.films.toArray();
+  films.reverse(); // Inverser l'ordre pour afficher le plus récent en premier
   const tbody = document.querySelector("#filmTable tbody");
   tbody.innerHTML = "";
 
