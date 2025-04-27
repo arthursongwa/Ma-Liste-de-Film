@@ -339,6 +339,7 @@ async function renderFilmsWithFilters() {
   };
 
   const films = await db.films.toArray();
+  films.reverse(); // Inverser l'ordre pour afficher le plus récent en premier
   const filtered = films.filter((f) => {
     return (!filters.type || f.type === filters.type) &&
            (!filters.platform || f.platform === filters.platform) &&
