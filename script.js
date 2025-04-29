@@ -62,7 +62,7 @@ async function renderFilms() {
   const films = await db.films.toArray();
   films.reverse(); // Inverser l'ordre pour afficher le plus récent en premier
   const tbody = document.querySelector("#filmTable tbody");
-  tbody.innerHTML = "";
+  
 
   films.forEach((film) => {
     const tr = document.createElement("tr");
@@ -78,7 +78,7 @@ async function renderFilms() {
     data_serie.innerHTML = `${nbr_films} Films et ${nbr_series} Séries`; // Affiche le nombre de séries
     data_anime.innerHTML = `${nbr_animes} Animes`; // Affiche le nombre d'animes
 
-    tr.innerHTML += `
+    tr.innerHTML = `
       <td title="Titre">${film.title}</td>
       <td title="Type">${film.type}</td>
       <td title="Genre">${film.genres}</td>
