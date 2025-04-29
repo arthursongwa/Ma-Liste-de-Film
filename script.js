@@ -62,7 +62,7 @@ async function renderFilms() {
   const films = await db.films.toArray();
   films.reverse(); // Inverser l'ordre pour afficher le plus récent en premier
   const tbody = document.querySelector("#filmTable tbody");
-  
+  tbody.innerHTML = "";
 
   films.forEach((film) => {
     const tr = document.createElement("tr");
