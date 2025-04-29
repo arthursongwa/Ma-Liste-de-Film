@@ -21,6 +21,23 @@ db.version(1).stores({
   films: "++id, title, type, genres, platform, priority, status, date"
 });
 
+// Il s'agit d'un exemple de film à ajouter à la base de données
+db.films.where('title').equals("Film exemple").first().then(existingFilm => {
+  if (existingFilm) {
+    console.log("Le film existe déjà :");
+  } else {
+    db.films.add({
+      title: "Film exemple",
+      type: "Film", // ou "série", "anime", etc.
+      genres: "action",
+      platform: "Netflix",
+      priority: "Haute",
+      status: "En cour", // ou "Vu", "En cours"
+      date: 2025 // ou une autre date
+    })
+  }
+});
+
 // Ajouter un film
 document.getElementById("filmForm").addEventListener("submit", async function (e) {
   e.preventDefault();
